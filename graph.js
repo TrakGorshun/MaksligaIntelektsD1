@@ -73,7 +73,6 @@ class Board {
 					list.push(elem);
 				});
 			});
-			// console.log(stack);
 			for (let i = 0; i < parentElements.length; i++) {
 				id = parentElements[i].id;
 				stack[i].forEach(child => {

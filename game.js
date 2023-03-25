@@ -11,18 +11,6 @@ class Game {
 		let fruits = ['apple', 'watermelon', 'orange', 'banana', 'pear'];
 
 		let fruitList = this.makeFruits(fruits);
-		// let fruitList = [
-		// 	// {fruit: 'watermelon', image: 'melone.png'},
-		// 	{fruit: 'pear', image: 'bumbieris.png'},
-		// 	{fruit: 'orange', image: 'orange.png'},
-		// 	{fruit: 'pear', image: 'bumbieris.png'},
-		// 	{fruit: 'banana', image: 'banana.png'},
-		// 	{fruit: 'apple', image: 'abols.png'},
-		// 	{fruit: 'watermelon', image: 'melone.png'}
-		// ]
-
-
-		console.log(fruitList);
 		this.gameWindow.style.width = '1400px';
 		this.gameWindow.style.height = '900px';
 		this.gameWindow.style.zIndex = 1;
@@ -77,11 +65,8 @@ class Game {
 		let playerPreviousSrc = '';
 		let aiWatermelonMove = false;
 			for (let i = 0; i < 10; i++) {
-				console.log(i);
 				if (move == 'player') {
 					await new Promise((resolve, reject) => {
-						// player move
-						console.log('player move');
 						let myinterval = setInterval (function () {
 							if (typeof fruitMovement.currentFruit != 'undefined') {
 								clearInterval(myinterval);
@@ -149,18 +134,14 @@ class Game {
 					// const zeroVertex = new Stavoklis(`A0`, [ 'watermelon', 'pear', 'banana',  ], aiScore, playerScore, 'ai');
 					let j = 0;
 					if (aiWatermelonMove) {
-						console.log('aiwat');
 						zeroVertex.setLink(aiChoice);
 					}
 					const board = new Board(g, zeroVertex, j);
 					let list = board.generateGraph();
-					console.log(list);
-					console.log(board.graph);
 					const minimaxMove = new Ai(board.graph, list);
 					minimaxMove.minimax('A0', 0, true);
 					
 					const bestMove = minimaxMove.answer;
-					console.log(bestMove);
 					aiChoice = minimaxMove.list.find(fruit => fruit.id == bestMove);
 					const aiMove = aiChoice.move;
 					aiScore = aiChoice.aiScore;
@@ -209,7 +190,6 @@ class Game {
 		await new Promise((resolve) => {
 			let myinterval = setInterval (function () {
 				waitForButtonClick(function (event) {
-					console.log(event.target);
 					if (event.target.textContent == 'ja') {
 						restartGameClicked = true;
 					}
@@ -217,7 +197,6 @@ class Game {
 						endGame = true;
 					}
 				});
-				// console.log(restartGameClicked);
 				if (restartGameClicked || endGame) {
 					clearInterval(myinterval);
 					resolve();
@@ -231,7 +210,6 @@ class Game {
 			fruitMovement.grozas.forEach(element => {
 				element.remove();
 			});
-			console.log(notification.textContent);
 			const elementToRemove = notification.querySelector('p');
 			notification.removeChild(elementToRemove);
 			notification.style.display = 'none';
