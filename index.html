@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="styles.css">
+	<title>Document</title>
+</head>
+<body>
+	<div class="menu">
+		<div class="menu__text">
+			Augļi spēle
+		</div>
+		<div id="menu__start">
+			<button>Start</button>
+			<button>Noteikumi</button>
+		</div>
+	</div>
+	<div class="menu__rules">
+		<div id="menu__text">
+			Spēlē ir pieci augļu veidi: banāni, 
+			apelsīni, āboli, arbūzi un bumbieri. 
+			Katram no tiem ir savs punktu diapazons.
+			<li>Banāni - (17) <img src="images/banana.png" width="25px" height="25px"></li>
+			<li>Apelsīni - (15) <img src="images/orange.png" width="25px" height="25px"></li>
+			<li>Āboli - (20) <img id="source" src="images/abols.png" width="25px" height="25px"></li>
+			<li>Arbūzi - (25) <img src="images/melone.png" width="25px" height="25px"></li>
+			<li>Bumbieri - (12) <img src="images/bumbieris.png" width="25px" height="25px"></li>
+			Spēlē ir 2 grozi, katrs uz viena spēlētāja. Spēlē gadījuma kārtā parādās 10 augļi, katrs atšķirīga veida.
+			Katrs spēlētājs gājienā paņem sev augli un ievieto to grozā tad nākamais spēlētājs veic savu gājienu.
+			Jā spēlētājs paņem arbūzs viņš nevar ņemt arbūzs, abolu un banānu nakama gajiena momenta.
+			Jā spēlētājs paņem bumbieris, tad spēlētaja kopējo punktu skaits palielinās uz 20%.
+			Jā spēlētājs paņem banānu, tad spēlētaja kopējo punktu skaits samazinās par 10%.
+			Spele beidzās, kad uz ekrāna nebūs augļu.
+			Uzvar tas, kurš savāks vislielāko punktu skaitu.
+		</div>
+		<button class="goback">Atpaķaļ</button>
+	</div>
+	<div class="menu" id="menu__select">
+		<div class="menu__text">
+			Kurš izdarīs pirmo gājienu?
+		</div>
+		<div id="menu__choice">
+			<button>Dators</button>
+			<button>Cilveks</button>
+			<button class="goback">Atpaķaļ</button>
+		</div>
+	</div>
+	<div id="mygameWindow">
+		<div id="player_score" style="top: 93%;
+		left: 10%;"></div>
+		<div id="player_score" style="top: 93%;
+		left: 60%;"></div>
+		<div id="spele_in">
+			<p>Arbūzi - (25) <img src="images/melone.png" width="25px" height="25px"> - 
+				<img src="images/melone.png" width="25px" height="25px">,
+				<img id="source" src="images/abols.png" width="25px" height="25px"> un
+				<img src="images/banana.png" width="25px" height="25px">
+			</p>
+			<p>Āboli - (20) <img id="source" src="images/abols.png" width="25px" height="25px"></p>
+			<p>Banāni - (17) <img src="images/banana.png" width="25px" height="25px"> - 10%</p>
+			<p>Apelsīni - (15) <img src="images/orange.png" width="25px" height="25px"></p>
+			<p>Bumbieri - (12) <img src="images/bumbieris.png" width="25px" height="25px"> + 20%</p>
+		</div>
+		<div id="mygameWindow_notification">
+			<button>ja</button>
+			<button>ne</button>
+		</div>
+	</div>
+	<script src="game.js"></script>
+	<script src="fruits.js"></script>
+	<script src="move.js"></script>
+	<script src="graph.js"></script>
+	<script src="ai.js"></script>
+	<script src="script.js"></script>
+</body>
+</html>
