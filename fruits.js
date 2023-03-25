@@ -77,9 +77,9 @@ class FruitMovement {
 			element.addEventListener('mouseup', function() {
 				isDragging = false;
 				self.currentFruit = element;
+				beginValues = false;
 				if (inZoneTwo) {
 					self.currentFruit.style.visibility = 'hidden';
-					beginValues = false;
 				}
 				else {
 					self.placeInBeginning();
