@@ -1,26 +1,26 @@
 class Graph {
 	constructor() {
-	  this.adjList = new Map();
+		this.adjList = new Map();
 	}
-  
+
 	addVertex(vertex) {
-	  this.adjList.set(vertex, []);
+		this.adjList.set(vertex, []);
 	}
-  
+
 	addEdge(vertex1, vertex2) {
-	  this.adjList.get(vertex1).push(vertex2);
+		this.adjList.get(vertex1).push(vertex2);
 	}
-  }
+}
 
 class Stavoklis {
 	constructor(id = 0, fruitList = [], aiScore = 0, playerScore = 0, moveChoice = '', move = '') {
-	  this.id = id;
-	  this.fruitList = fruitList;
-	  this.aiScore = aiScore;
-	  this.playerScore = playerScore;
-	  this.moveChoice = moveChoice;
-	  this.move = move;
-	  this.link = '';
+		this.id = id;
+		this.fruitList = fruitList;
+		this.aiScore = aiScore;
+		this.playerScore = playerScore;
+		this.moveChoice = moveChoice;
+		this.move = move;
+		this.link = '';
 	}
 	setLink(link) {
 		this.link = link;
@@ -28,10 +28,10 @@ class Stavoklis {
 }
 class Board {
 	constructor(graph, father, j) {
-	  this.graph = graph;
-	  this.father = father;
-	  this.j = j;
-	  this.graph.addVertex(this.father.id);
+		this.graph = graph;
+		this.father = father;
+		this.j = j;
+		this.graph.addVertex(this.father.id);
 	}
 
 	generateGraph() {
@@ -204,4 +204,3 @@ class Board {
 		return false;
 	}
 }
-  

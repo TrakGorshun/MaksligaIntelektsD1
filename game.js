@@ -177,13 +177,13 @@ class Game {
 		notification.insertBefore(newText, notification.firstChild);
 		newText.style.margin = '3px';
 		notification.style.display = 'block';
-		// this.buttonWasClicked = false;
 		let notificationBtns = notification.querySelectorAll('button');
 
 		function waitForButtonClick(callback) {
 			notificationBtns[0].addEventListener('click', callback);
 			notificationBtns[1].addEventListener('click', callback);
 		}
+
 		let restartGameClicked = false;
 		let endGame = false;
 
@@ -215,8 +215,8 @@ class Game {
 			notification.style.display = 'none';
 			playerScoreTable[0].innerHTML = `Datora punkti: 0`;
 			playerScoreTable[1].innerHTML = `Spēlētaja punkti: 0`;
-
-			const game = new Game(this.firstPlayerMove, this.gameWindow);
+			this.gameWindow.style.display = 'none';
+			menu[1].style.display = 'block';
 		}
 		else {
 			notification.style.display = 'none';

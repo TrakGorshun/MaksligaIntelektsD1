@@ -37,4 +37,3 @@ choice[1].addEventListener('click', (event) => {
 	firstMove = 'player';
 	let game = new Game(firstMove, gameWindow);
 });
-

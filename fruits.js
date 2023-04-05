@@ -14,15 +14,12 @@ class FruitMovement {
 			self.firstBasket = pirmaGrozaRect;
 			const otraGrozaRect = grozas[1].getBoundingClientRect();
 
-			
-
-
 			let inZoneOne = (
 				elementRect.top >= pirmaGrozaRect.top &&
 				elementRect.left >= pirmaGrozaRect.left &&
 				elementRect.bottom <= pirmaGrozaRect.bottom &&
 				elementRect.right <= pirmaGrozaRect.right
-		  	);
+			);
 
 			let inZoneTwo = (
 				elementRect.top >= otraGrozaRect.top &&
@@ -69,7 +66,6 @@ class FruitMovement {
 						elementRect.bottom <= otraGrozaRect.bottom &&
 						elementRect.right <= otraGrozaRect.right
 					);
-
 					elementRect = element.getBoundingClientRect();
 				}
 			});
