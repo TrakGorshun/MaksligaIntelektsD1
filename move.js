@@ -15,7 +15,7 @@ class Move {
 			case "banana.png":
 				points = 17;
 				break;
-			case "melone.png":
+			case "watermelon.png":
 				points = 25;
 				break;
 			case "abols.png":

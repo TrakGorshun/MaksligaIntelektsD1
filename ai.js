@@ -2,7 +2,6 @@ class Ai {
 	constructor(graph, list) {
 		this.graph = graph;
 		this.list = list;
-		this.val = [1];
 		this.scoreMin = Infinity;
 		this.scoreMax = -Infinity;
 	}

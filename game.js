@@ -11,6 +11,7 @@ class Game {
 		let fruits = ['apple', 'watermelon', 'orange', 'banana', 'pear'];
 
 		let fruitList = this.makeFruits(fruits);
+		console.log(fruitList);
 		this.gameWindow.style.width = '1400px';
 		this.gameWindow.style.height = '900px';
 		this.gameWindow.style.zIndex = 1;
@@ -60,7 +61,6 @@ class Game {
 		let rightMove = false;
 		let playerScore = 0;
 		let aiScore = 0;
-		let player = '';
 		let aiChoice = null;
 		let playerPreviousSrc = '';
 		let aiWatermelonMove = false;
@@ -131,7 +131,6 @@ class Game {
 					});
 					const g = new Graph();
 					const zeroVertex = new Stavoklis(`A0`, boardChoices, aiScore, playerScore, 'ai');
-					// const zeroVertex = new Stavoklis(`A0`, [ 'watermelon', 'pear', 'banana',  ], aiScore, playerScore, 'ai');
 					let j = 0;
 					if (aiWatermelonMove) {
 						zeroVertex.setLink(aiChoice);
@@ -248,8 +247,8 @@ class Game {
 	}
 
 	checkWatermelonRules(playerPreviousSrc, src) {
-		if (playerPreviousSrc == 'melone.png') {
-			if (src == 'melone.png' || src == 'abols.png' || src == 'banana.png') {
+		if (playerPreviousSrc == 'watermelon.png') {
+			if (src == 'watermelon.png' || src == 'abols.png' || src == 'banana.png') {
 				return false;
 			}
 		}
@@ -282,7 +281,7 @@ class Game {
 				src = 'bumbieris.png';
 				break;
 			case "watermelon":
-				src = 'melone.png';
+				src = 'watermelon.png';
 				break;
 			case "banana":
 				src = 'banana.png';
